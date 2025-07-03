@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Greeting & Action -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Good Morning"
+            android:textColor="#424242"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAction"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="History"
+            app:strokeColor="#1976D2"
+            app:strokeWidth="2dp"
+            android:textColor="#1976D2" />
+    </LinearLayout>
+
+    <!-- BMI Form -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BMI and Health Details"
+                android:textColor="#212121"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp"
+                android:gravity="center" />
+
+            <!-- User ID -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:hint="User ID"
+                app:boxStrokeColor="#1976D2"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxBackgroundMode="outline">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtUserId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Age -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:hint="Age"
+                app:boxStrokeColor="#1976D2"
+                app:boxBackgroundMode="outline">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:cursorVisible="false"
+                    android:longClickable="false" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Height -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:hint="Height (cm)"
+                app:boxStrokeColor="#1976D2"
+                app:boxBackgroundMode="outline">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtHeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Weight -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:hint="Weight (kg)"
+                app:boxStrokeColor="#1976D2"
+                app:boxBackgroundMode="outline">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Conditions Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Health Conditions"
+                android:textStyle="bold"
+                android:textColor="#424242"
+                android:textSize="16sp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Checkboxes -->
+            <CheckBox
+                android:id="@+id/cbDiabetes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Diabetes" />
+
+            <CheckBox
+                android:id="@+id/cbHeart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Heart Disease" />
+
+            <CheckBox
+                android:id="@+id/cbCholesterol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cholesterol" />
+
+            <CheckBox
+                android:id="@+id/cbCancer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancer"
+                android:layout_marginBottom="24dp" />
+
+            <!-- BMI Result -->
+            <TextView
+                android:id="@+id/tvBmiResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BMI: "
+                android:textSize="18sp"
+                android:textColor="#1976D2"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone" />
+
+            <!-- BMI Status -->
+            <TextView
+                android:id="@+id/tvBmiStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Maintain a healthy BMI for a healthier life!"
+                android:textSize="16sp"
+                android:textColor="#1976D2"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone" />
+
+            <!-- Submit -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmitUserData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                app:cornerRadius="16dp"
+                app:backgroundTint="#1976D2"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="12dp" />
+
+            <!-- View BMI -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewBMI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View BMI"
+                android:visibility="gone"
+                app:cornerRadius="16dp"
+                app:backgroundTint="#1976D2"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
